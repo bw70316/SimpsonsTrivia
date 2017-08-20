@@ -1,0 +1,178 @@
+
+
+body { background-image: url("donut.jpg")
+
+}
+
+.jumbotron h1{
+	margin-bottom: 30px;
+	margin-left: 25px;
+
+
+}
+
+
+
+#counter {
+background-size: cover;
+		color:red;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+	font-family: 'Rock Salt', bold;
+	font-weight:bold;
+	
+}
+
+.answer-button {
+	color:red;
+	margin:15px;
+	margin-top: 15px;
+	background: blue;
+	font-size: 20px;
+	text-align:center;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+		color: #fad443;
+	font-family: 'Rock Salt', bold;
+	background: #2982bc; 
+	border:none;
+	border-radius: 5px;
+}
+
+h2 {
+	/*background: lightblue;
+}*/}
+#subwrapper {
+
+  /*  margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+*/    font-family: 'Rock Salt', bold;
+
+    color:yellow;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+
+.pic {
+	max-height: 400px;
+	max-width:350px;
+	margin-bottom:20px;
+	/*margin-left: 350px;*/
+}
+
+#reset {
+	font-size: 30px;
+	color: #fad443;
+	font-family: 'Rock Salt', bold;
+	background: #2982bc; 
+	max-width:400px;
+		text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+	border:blue;
+	margin-top: 40px;
+}
+
+
+.jumbotron {
+	margin-top: 50px;
+
+	 background: url("simpsons-cloud.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    background-size: cover;
+		color:yellow;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+	margin-left:auto;
+    margin-right:auto;
+    width:960px;
+}
+
+li {
+	list-style-type: none;
+}
+
+.burns {
+	border-style: groove;
+	border: blue;
+	margin-top: 40px;
+}
+
+#start { /*margin-left: 500px;*/
+font-size: 30px;
+	color: #fad443;
+	font-family: 'Rock Salt', bold;
+	background: #2982bc; 
+	max-width:400px;
+		text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+	border:blue;
+	/*margin-top: 250px;}
+
+.container {margin-top:50px;
+	background-size: cover;
+	width:950px;
+	/*background-image: url("simpsons-cloud.jpg")*/
+	
+}
+
+
+sup {
+	font-size: 4px;
+}
+
+h1 {
+/*margin-left: 500px;*/
+font-size: 40px;
+	color: #fad443;
+	font-family: 'Rock Salt', bold;
+	width:750px;
+/*	background: #2982bc; */
+
+
+	border:blue;
+	/*margin-top: 250px;*/}
+
+#again {
+	color:blue;
+}
+
+#outcome {
+
+	    width: 500px;
+    margin-top: 20px;
+    margin-left: 205px;
+    border-style: none;
+    margin-bottom: 15px;
+    border:none;
+    background:none;
+    color: #fad443;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+	font-weight: bold;
+	font-family: 'Rock Salt', bold;
+    background:none;
+}
+
+
+#header {
+	background-color: #7bafd4;
+	margin-top: 50px;
+	border:none;
+	width: 500px;
+	   border-style: none;
+	margin-left:205px;
+	opacity: 0.8;
+	border: 20px;
+
+	color: yellow;
+	font-family: 'Rock Salt', bold;}
+
+
+#timer {
+	border: none;
+	text-align: center;
+	color: yellow;
+	   border-style: none;
+	background: none;
+	
+	margin-top: 20px;
+	font-size:24px;
+}
+
