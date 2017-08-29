@@ -4,6 +4,10 @@
   
 // };
 
+ $(document).ready(function () {  
+            $('.dropdown-toggle').dropdown();  
+        });
+ 
 $("#start").on('click', function(){
 	$("#start").remove();
 	game.loadQuestion();

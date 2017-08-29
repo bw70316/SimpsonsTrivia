@@ -1,4 +1,4 @@
-
+* {box-sizing: border-box;}
 
 body { background-image: url("donut.jpg")
 
@@ -11,7 +11,87 @@ body { background-image: url("donut.jpg")
 
 }
 
+.nav navbar-nav {
+	color: blue;
+}
 
+#logo {
+	    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+    color: gold;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-top: 12.5px;
+    font-size: 36px;
+    font-family: 'Rock Salt', bold;
+
+}
+
+#beginner {
+	color:red;
+}
+
+
+.container-fluid>.navbar-header {}
+
+.flip-container {
+ -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+    float: left;
+    overflow: auto;
+    position: relative;
+    margin-right: 25px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-bottom: 25px;
+    margin-left: 24.5px;
+    /* border: 1px solid #ccc; */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*.nav {
+	width: 90%;
+}*/
+
+.nav>li {display:inline-block;
+color: red;}
+/*nav li a {
+	    color: darkgreen;
+    text-decoration: none;
+   
+    display: inline-block;
+    border-left: 1px solid #ddd;
+    padding-left: 15px;
+    line-height: 18px;
+
+}*/
+
+li {
+	color: red;
+}
+
+.dropdown {
+
+}
 
 #counter {
 background-size: cover;
@@ -30,7 +110,7 @@ background-size: cover;
 	font-size: 20px;
 	text-align:center;
 	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
-		color: #fad443;
+		color: gold;
 	font-family: 'Rock Salt', bold;
 	background: #2982bc; 
 	border:none;
@@ -60,7 +140,7 @@ h2 {
 
 #reset {
 	font-size: 30px;
-	color: #fad443;
+	color: gold;
 	font-family: 'Rock Salt', bold;
 	background: #2982bc; 
 	max-width:400px;
@@ -71,7 +151,7 @@ h2 {
 
 
 .jumbotron {
-	margin-top: 50px;
+	margin-top: 120px;
 
 	 background: url("simpsons-cloud.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -79,11 +159,15 @@ h2 {
     -o-background-size: cover;
     text-align: center;
     background-size: cover;
-		color:yellow;
+		color:gold;
 	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 	margin-left:auto;
     margin-right:auto;
     width:960px;
+    border-width:3px;
+	border-radius: 3px;
+	border-style:groove;
+border-color: rgba(251, 0, 255, 0.99);
 }
 
 li {
@@ -98,12 +182,16 @@ li {
 
 #start { /*margin-left: 500px;*/
 font-size: 30px;
-	color: #fad443;
+	color: gold;
+	border-width:3px;
+	border-radius: 3px;
+	border-style:groove;
+border-color: rgba(251, 0, 255, 0.99);
 	font-family: 'Rock Salt', bold;
 	background: #2982bc; 
 	max-width:400px;
 		text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
-	border:blue;
+	
 	/*margin-top: 250px;}
 
 .container {margin-top:50px;
@@ -113,6 +201,10 @@ font-size: 30px;
 	
 }
 
+#start:hover {
+	color:red;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+}
 
 sup {
 	font-size: 4px;
@@ -121,7 +213,7 @@ sup {
 h1 {
 /*margin-left: 500px;*/
 font-size: 40px;
-	color: #fad443;
+	color: gold;
 	font-family: 'Rock Salt', bold;
 	width:750px;
 /*	background: #2982bc; */
@@ -130,9 +222,140 @@ font-size: 40px;
 	border:blue;
 	/*margin-top: 250px;*/}
 
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-top: -10px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-top: -10px;
+}
+.navbar-inverse .navbar-nav>li>a {
+color: gold;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+	font-weight: bold;
+	font-family: 'Rock Salt', bold;	
+	margin-bottom: 10.5px;
+	font-size: 18px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+	color:red;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+}
+
+
+.navbar-inverse .navbar-nav>.open>a {
+		background-color: transparent
+}
+
+#logo:hover {
+color:red;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+}
+.navbar-inverse .navbar-nav>.open>a:hover {
+	background-color: transparent;
+}
+ 
+.dropdown-toggle {
+	
+}
+
+.container-fluid {
+	background: #00feff;
+	height:100%;
+	border-color: blue;
+	 background: url("simpsons-cloud.jpg") no-repeat;
+    background-size: cover;
+    border-style: groove;
+    border-top: none;
+    border-right:none;
+    border-left:none;
+
+}
+
+.navbar-inverse {
+	border-style: groove;
+	border: 2px darkred;
+}
+
+#right {
+	margin-right: 100px;
+}
+
+.dropdown-menu {
+background:transparent;
+color: red;
+border:none;
+left:40px;
+padding-bottom: 0px;
+}
+
+.dropdown-menu:hover {}
+
+#masthead {}
+
+.dropdown-menu>li>a {
+color:gold;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+	text-align:center;
+	border-style:groove;
+	border-right:none;
+	font-family: 'Rock Salt';
+	font-weight: bold;
+	border-radius: 3px;
+	border-top: none;
+	background: lightblue;
+	border-color: darkred;
+
+}
+
+.dropdown-menu>li>a:hover {
+	background:blue;
+	font-family: 'Rock Salt';
+	font-weight: bold;
+	color:red;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+}
+
+#expert {
+	border-bottom: none;
+}
+
+.logo {width: 300px;
+		height: 90px;
+		background: lightblue;
+		font-family: 'Georgia', Times, Times New Roman, serif;
+		text-align: center;
+		line-height: 90px;
+		margin-left:125px;
+		border-radius: 12px;
+			text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+		padding:30px;
+		color: black;
+		font-weight:700;
+		font-size: 30px;
+		text-decoration: none;
+		}
+
+.nav    {float:right;
+margin-top:25px;
+}
 #again {
 	color:blue;
 }
+
+nav li a:hover {
+	background-color: blue;
+}
+
+nav a:first-child
+ 	{border-left: 0 none;}
 
 #outcome {
 
@@ -143,7 +366,7 @@ font-size: 40px;
     margin-bottom: 15px;
     border:none;
     background:none;
-    color: #fad443;
+    color: gold;
 	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 	font-weight: bold;
 	font-family: 'Rock Salt', bold;
