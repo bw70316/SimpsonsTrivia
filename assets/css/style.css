@@ -92,6 +92,13 @@ li {
 .dropdown {
 
 }
+#score {
+	background-size: cover;
+		color:red;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+	font-family: 'Rock Salt', bold;
+	font-weight:bold;
+}
 
 #counter {
 background-size: cover;

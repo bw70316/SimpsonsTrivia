@@ -24,6 +24,10 @@ $(document).on('click', '#reset', function() {
 	game.reset();
 });
 
+// $(document).ready(function() {doTimer();});
+
+
+
 var questions = [{
 	question: "1. What is the name of Bart Simpson's teacher?",
  answers: ["Ms. Hoover", "Ms. Crabapple", "Ms. Krabappel", "Mrs. Lovejoy"],
@@ -58,7 +62,9 @@ image:"assets/css/lamb.jpg"}];
  	counter:30,
  	correct:0,
  	incorrect:0,
+ 	score:0,
  	unanswered:0,
+ 	pointsAvailable: 1000,
  	countdown: function(){
  		game.counter--;
  		$("#counter").html(game.counter);
@@ -66,12 +72,25 @@ image:"assets/css/lamb.jpg"}];
  			console.log("Time's Up, ay caramba");
  			game.timeUp();
  		}
-
  	},
+
+ 	scoreDown: function() {
+ 		game.pointsAvailable--;
+ 		$("#score").html(game.pointsAvailable);
+ 	},
+
+ 	
  	loadQuestion: function() {
+ 		scoreBoard = setInterval(game.scoreDown, 50)
  		timer = setInterval(game.countdown, 1000);
+ 		game.score += game.pointsAvailable;
+ 	
  		$('#subwrapper').html("<h2 id='question'>Time   Remaining : <span id='counter'>30</span> Seconds</h2>");
  		$("#subwrapper").append("<h2 id='question'>" + questions[game.currentQuestion].question + "</h2>" + '<img class="pic" src="'+ questions[game.currentQuestion].image + '"/>');
+ 		$("#subwrapper").append("<h2 id='question'>Score <span id='score'>1000</span></h2>");
+ 		// game.reducePoints();
+ 		
+
 
 
 
@@ -83,13 +102,16 @@ image:"assets/css/lamb.jpg"}];
  	nextQuestion: function() {
  		game.counter = 30;
  		$("#counter").html(game.counter);
+ 		// $("#score").append(game.pointsAvailable)
  		game.currentQuestion++;
  		game.loadQuestion();
+ 		game.pointsAvailable= 1000;
 
 
  	},
  	timeUp: function() {
  		clearInterval(timer);
+
  		game.unanswered++
  		$('#subwrapper').html("<h2>Ay Caramba... You're out of time!!</h2>");
  		$('#subwrapper').append("<img class='burns' src='assets/css/giphy.gif' height='300px' width='200px'/>");
@@ -127,21 +149,28 @@ image:"assets/css/lamb.jpg"}];
  		game.correct++;
  		$('#subwrapper').html('<h2>WOO HOO! You got it right!</h2>');
  		  $('#subwrapper').append("<img class='burns' src='assets/css/excellent.gif' height='300px' width='200px'/>")
+ 	 	$('#subwrapper').append("<h2> Score: " + game.pointsAvailable + "</h2");
+ 	 	setTimeout(game.pointsAvailable, 3*1000);
 
  		if(game.currentQuestion==questions.length-1) {
  			setTimeout(game.results,3*1000);
  		} else {
  			setTimeout(game.nextQuestion, 3*1000);
  		}
+
   	},
  	answeredIncorrect: function() {
  		console.log("nope");
  		clearInterval(timer);
  		game.incorrect++;
+ 		setTimeout(game.pointsAvailable, 3*1000);
+ 		game.pointsAvailable=0;
 
  		$('#subwrapper').html("<h2>D'oh! You got it wrong!</h2>");
  		$('#subwrapper').append("<h3>The correct   answer was : " +questions[game.currentQuestion].correctAnswer+"</h3");
-        $('#subwrapper').append("<img class='burns' src='assets/css/dummy.gif' height='300px' width='200px'/>")
+ 		$('#subwrapper').append("<h2 id='score'> Score: " +game.pointsAvailable+"</h2");
+        $('#subwrapper').append("<img class='burns' src='assets/css/dummy.gif' height='300px' width='200px'/>");
+    	clearInterval(scoreBoard);
  		if(game.currentQuestion==questions.length-1) {
  			setTimeout(game.results,3*1000);
  		} else {
@@ -157,6 +186,26 @@ image:"assets/css/lamb.jpg"}];
  		game.unanswered=0;
  		game.loadQuestion();
 
- 	}
+ 	},
+
+ 	foundMatchingBlocks: function(event, params) {
+ 		params.elements.remove();
+ 		score += pointsAvailable;
+ 		$('#score').text(score);
+ 		pointsAvailable = 1000;
+ 	},
+
+	// doTimer: function() {
+	// 	setTimeout('reducePoints', 100);
+	// },
+
+		// reducePoints: function() {
+		// 	if(game.pointsAvailable>0) {
+		// 		game.pointsAvailable--;
+		// 	}
+		
+		// }
+
+		
 
  }
