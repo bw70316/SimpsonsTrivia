@@ -18,11 +18,17 @@ $("#start").on('click', function(){
 
 $(document).on('click', '.answer-button', function(e){
 	game.clicked(e);
+	console.log("woot");
+	$.each(localStorage.setItem("score", game.pointsAvailable));
 });
 
 $(document).on('click', '#reset', function() {
-	game.reset();
+
+	location.reload();
 });
+
+
+
 
 // $(document).ready(function() {doTimer();});
 
@@ -59,7 +65,7 @@ image:"assets/css/lamb.jpg"}];
  var game= {
  	questions:questions,
  	currentQuestion:0,
- 	counter:30,
+ 	counter:20,
  	correct:0,
  	incorrect:0,
  	score:0,
@@ -77,18 +83,30 @@ image:"assets/css/lamb.jpg"}];
  	scoreDown: function() {
  		game.pointsAvailable--;
  		$("#score").html(game.pointsAvailable);
+
  	},
 
  	
  	loadQuestion: function() {
- 		scoreBoard = setInterval(game.scoreDown, 50)
+ 		scoreboard = setInterval(game.scoreDown, 20);
  		timer = setInterval(game.countdown, 1000);
  		game.score += game.pointsAvailable;
- 	
- 		$('#subwrapper').html("<h2 id='question'>Time   Remaining : <span id='counter'>30</span> Seconds</h2>");
+ 		console.log("#score");
+ 		console.log(game.score);
+ 		game.pointsAvailable= 1000;
+ 		$('#subwrapper').html("<h2 id='question'>Time   Remaining : <span id='counter'>20</span> Seconds</h2>");
  		$("#subwrapper").append("<h2 id='question'>" + questions[game.currentQuestion].question + "</h2>" + '<img class="pic" src="'+ questions[game.currentQuestion].image + '"/>');
  		$("#subwrapper").append("<h2 id='question'>Score <span id='score'>1000</span></h2>");
  		// game.reducePoints();
+
+ 		if(game.score<=0) {
+
+
+ 			$("#score").remove();
+ 		}
+ 		else {
+ 			console.log ("yaay");
+ 		}
  		
 
 
@@ -100,41 +118,55 @@ image:"assets/css/lamb.jpg"}];
 
  	},
  	nextQuestion: function() {
- 		game.counter = 30;
+ 		game.counter = 20;
+ 		clearInterval(scoreboard);
+
+ 		// scoreBoard = setInterval(game.scoreDown, 20);
  		$("#counter").html(game.counter);
  		// $("#score").append(game.pointsAvailable)
  		game.currentQuestion++;
- 		game.loadQuestion();
- 		game.pointsAvailable= 1000;
+ 	    game.loadQuestion();
+ 	    // setInterval(game.scoreDown, 20);
+ 		
+ 		
 
 
  	},
  	timeUp: function() {
  		clearInterval(timer);
-
- 		game.unanswered++
+ 		clearInterval(scoreboard);
+ 		setTimeout(game.pointsAvailable, 3*1000);
+ 	 	// clearInterval(game.pointsAvailable);
+ 		// setInterval(game.scoreDown, 20);
+ 		game.unanswered++;
  		$('#subwrapper').html("<h2>Ay Caramba... You're out of time!!</h2>");
  		$('#subwrapper').append("<img class='burns' src='assets/css/giphy.gif' height='300px' width='200px'/>");
  		$('#subwrapper').append("<h3>The correct answer was: " +questions[game.currentQuestion].correctAnswer+"</h3");
  		if(game.currentQuestion==questions.length-1) {
- 			setTimeout(game.results,1*1000);
+ 			setTimeout(game.results,3*1000);
  		} else {
- 			setTimeout(game.nextQuestion, 1*1000);
+ 			setTimeout(game.nextQuestion, 3*1000);
  		}
  	},
  	results: function(){
  		clearInterval(timer);
- 		$("#subwrapper").html("<h2>Game Over</h2>")
+ 		clearInterval(scoreboard);
+
+
+ 		$("#subwrapper").html("<h2 id='game-over'>Game Over</h2>")
+ 		$("#subwrapper").append("<h3 id='total'> total score: " + game.score + "</h3>");
  		$("#subwrapper").append("<h3>Right: " +game.correct+ "<h3>");
  		$("#subwrapper").append("<h3>Wrong: " +game.incorrect+ "</h3>");
  		$("#subwrapper").append("<h3>Not Attempted: " +game.unanswered+ "</h3>");
  		$("#subwrapper").append("<button id='reset'>Play Again?</button>");
+ 		
  		// game.reset();
 
  	},
  	clicked: function(e){
 
  		clearInterval(timer);
+ 		clearInterval(scoreboard);
  		if($(e.target).data("name")==questions[game.currentQuestion].correctAnswer){
  			game.answeredCorrect();
  		} else {
@@ -145,32 +177,43 @@ image:"assets/css/lamb.jpg"}];
  	},
  	answeredCorrect: function() {
  		console.log("correct");
+ 		clearInterval(scoreboard);
  		clearInterval(timer);
  		game.correct++;
  		$('#subwrapper').html('<h2>WOO HOO! You got it right!</h2>');
+ 		$('#subwrapper').append("<h2> Score: " + game.pointsAvailable + "</h2");
  		  $('#subwrapper').append("<img class='burns' src='assets/css/excellent.gif' height='300px' width='200px'/>")
- 	 	$('#subwrapper').append("<h2> Score: " + game.pointsAvailable + "</h2");
+ 	 	
  	 	setTimeout(game.pointsAvailable, 3*1000);
+ 	 	
+
+ 	 	
+ 	 	
 
  		if(game.currentQuestion==questions.length-1) {
  			setTimeout(game.results,3*1000);
+ 			// localStorage.setItem("score", game.pointsAvailable);
  		} else {
  			setTimeout(game.nextQuestion, 3*1000);
+ 		
  		}
+
 
   	},
  	answeredIncorrect: function() {
  		console.log("nope");
+ 		clearInterval(scoreboard);
  		clearInterval(timer);
+ 		game.pointsAvailable = 0;
  		game.incorrect++;
  		setTimeout(game.pointsAvailable, 3*1000);
- 		game.pointsAvailable=0;
-
+ 		
+ 		
  		$('#subwrapper').html("<h2>D'oh! You got it wrong!</h2>");
  		$('#subwrapper').append("<h3>The correct   answer was : " +questions[game.currentQuestion].correctAnswer+"</h3");
  		$('#subwrapper').append("<h2 id='score'> Score: " +game.pointsAvailable+"</h2");
         $('#subwrapper').append("<img class='burns' src='assets/css/dummy.gif' height='300px' width='200px'/>");
-    	clearInterval(scoreBoard);
+    	// clearInterval(scoreBoard);
  		if(game.currentQuestion==questions.length-1) {
  			setTimeout(game.results,3*1000);
  		} else {
@@ -179,21 +222,25 @@ image:"assets/css/lamb.jpg"}];
 
  	},
  	reset: function(){
+
  		game.currentQuestion = 0;
- 		game.counter = 30;
+ 		game.counter = 20;
  		game.correct=0;
  		game.incorrect=0;
+ 		clearInterval(scoreboard);
+ 		// pointsAvailable=1000;
  		game.unanswered=0;
  		game.loadQuestion();
+ 		
 
  	},
 
- 	foundMatchingBlocks: function(event, params) {
- 		params.elements.remove();
- 		score += pointsAvailable;
- 		$('#score').text(score);
- 		pointsAvailable = 1000;
- 	},
+ 	// foundMatchingBlocks: function(event, params) {
+ 	// 	params.elements.remove();
+ 	// 	score += pointsAvailable;
+ 	// 	$('#score').text(score);
+ 	// 	pointsAvailable = 1000;
+ 	// },
 
 	// doTimer: function() {
 	// 	setTimeout('reducePoints', 100);

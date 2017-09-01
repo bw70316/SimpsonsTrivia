@@ -109,12 +109,27 @@ background-size: cover;
 	
 }
 
+#total {
+	color:red;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+	font-family: 'Rock Salt', bold;
+	font-weight:bold;
+}
+
+#game-over {
+	color:red;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+	font-family: 'Rock Salt', bold;
+	font-weight:bold;
+}
+
 .answer-button {
 	color:red;
 	margin:15px;
 	margin-top: 15px;
 	background: blue;
 	font-size: 20px;
+	outline:none;
 	text-align:center;
 	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 		color: gold;
@@ -154,6 +169,7 @@ h2 {
 		text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 	border:blue;
 	margin-top: 40px;
+	outline:none;
 }
 
 
@@ -197,6 +213,7 @@ border-color: rgba(251, 0, 255, 0.99);
 	font-family: 'Rock Salt', bold;
 	background: #2982bc; 
 	max-width:400px;
+	outline:none;
 		text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 	
 	/*margin-top: 250px;}
@@ -206,6 +223,10 @@ border-color: rgba(251, 0, 255, 0.99);
 	width:950px;
 	/*background-image: url("simpsons-cloud.jpg")*/
 	
+}
+
+#start:onclick {
+	color:green;
 }
 
 #start:hover {
