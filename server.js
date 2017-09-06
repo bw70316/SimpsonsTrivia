@@ -27,7 +27,7 @@ app.use(express.static(__dirname + "/public"));
 // app.set("view engine", "handlebars");
 
 
-
+mongoose.connect("mongodb://heroku_zd3rrrxv:9h2bal9mgoe53v4asridpamrqv@ds129434.mlab.com:29434/heroku_zd3rrrxv")
 // Use bodyParser in our app
 app.use(bodyParser.urlencoded({
   extended: false
