@@ -218,14 +218,21 @@ var questionsMed= [{
  	results: function(){
  		clearInterval(timer);
  		clearInterval(scoreboard);
+ 		game.score - 1000;
 
 
  		$("#subwrapper").html("<h2 id='game-over'>Game Over</h2>")
- 		$("#subwrapper").append("<h3 id='total'> total score: " + game.score + "</h3>");
+ 		$("#subwrapper").append("<h3 id='total'> Total Score: " + game.score + "</h3>");
  		$("#subwrapper").append("<h3>Right: " +game.correct+ "<h3>");
  		$("#subwrapper").append("<h3>Wrong: " +game.incorrect+ "</h3>");
  		$("#subwrapper").append("<h3>Not Attempted: " +game.unanswered+ "</h3>");
  		$("#subwrapper").append("<button id='reset'>Play Again?</button>");
+
+ 		if (game.incorrect === 4) {
+ 			game.score=0;
+ 		} else {
+ 			game.score=game.score
+ 		}
  		
  		// game.reset();
 
@@ -393,6 +400,7 @@ var questionsMed= [{
  	results: function(){
  		clearInterval(timerMed);
  		clearInterval(scoreboardMed);
+ 		game.score - 1000;
 
 
  		$("#subwrapper").html("<h2 id='game-over'>Game Over</h2>")
