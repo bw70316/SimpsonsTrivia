@@ -27,7 +27,18 @@ body { background-image: url("donut.jpg")
 }
 
 #beginner {
-	color:red;
+	color:gold;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+	text-align:center;
+	border-style:groove;
+	border-right:none;
+	font-family: 'Rock Salt';
+	font-weight: bold;
+	border-radius: 3px;
+	border-left: none;
+	border-top: none;
+	background: lightblue;
+	border-color: darkred;
 }
 
 
@@ -123,9 +134,27 @@ background-size: cover;
 	font-weight:bold;
 }
 
+.answer-buttons {
+	color:red;
+	margin:15px;
+	margin-top: 15px;
+	background: blue;
+	padding:7px;
+	font-size: 20px;
+	outline:none;
+	text-align:center;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+		color: gold;
+	font-family: 'Rock Salt', bold;
+	background: #2982bc; 
+	border:none;
+	border-radius: 5px;
+}
+
 .answer-button {
 	color:red;
 	margin:15px;
+	padding: 7px;
 	margin-top: 15px;
 	background: blue;
 	font-size: 20px;
@@ -222,6 +251,41 @@ border-color: rgba(251, 0, 255, 0.99);
 	background-size: cover;
 	width:950px;
 	/*background-image: url("simpsons-cloud.jpg")*/
+	
+}
+
+#medium {
+	font-size: 30px;
+	color: gold;
+	border-width:3px;
+	border-radius: 3px;
+	border-style:groove;
+border-color: rgba(251, 0, 255, 0.99);
+	font-family: 'Rock Salt', bold;
+	background: #2982bc; 
+	max-width:400px;
+	outline:none;
+	    padding: 8px;
+	    margin:20px;
+		text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+	
+}
+
+
+
+#easy {
+	font-size: 30px;
+	color: gold;
+	border-width:3px;
+	    padding: 8px;
+	border-radius: 3px;
+	border-style:groove;
+border-color: rgba(251, 0, 255, 0.99);
+	font-family: 'Rock Salt', bold;
+	background: #2982bc; 
+	max-width:400px;
+	outline:none;
+		text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 	
 }
 
@@ -328,6 +392,21 @@ padding-bottom: 0px;
 
 #masthead {}
 
+#med {
+	color:gold;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+	text-align:center;
+	border-style:groove;
+	border-right:none;
+	font-family: 'Rock Salt';
+	font-weight: bold;
+	border-radius: 3px;
+	border-left: none;
+	border-top: none;
+	background: lightblue;
+	border-color: darkred;
+
+}
 .dropdown-menu>li>a {
 color:gold;
 	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
