@@ -104,7 +104,7 @@ image:"assets/css/lamb.jpg"}];
 
 var questionsMed= [{
 	question: "1. What is the Secret Ingedient in a 'Flaming Moe'?",
- answers: ["Uranium", "Orange Juice", "Duff", "Krusty Brand Couch Syrup"],
+ answers: ["Uranium", "Orange Juice", "Duff", "Krusty Brand Cough Syrup"],
  correctAnswer: "Krusty Brand Cough Syrup",
  image:"assets/css/moe.gif"
  }, {
